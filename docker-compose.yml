@@ -1,0 +1,69 @@
+version: '3.8'
+services:
+  eureka-server:
+    image: tu-eureka-server:latest
+    build:
+      context: ./eureka-server
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+
+  adoptante-service:
+    image: tu-adoptante-service:latest
+    build:
+      context: ./adoptante-service
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    environment:
+      - EUREKA_SERVER_URL=http://eureka-server:8761/eureka
+
+  protectora-service:
+    image: tu-protectora-service:latest
+    build:
+      context: ./protectora-service
+      dockerfile: Dockerfile
+    ports:
+      - "8045:8045"
+    environment:
+      - EUREKA_SERVER_URL=http://eureka-server:8761/eureka
+
+  api-gateway:
+    image: tu-api-gateway:latest
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8060:8060"
+    environment:
+      - EUREKA_SERVER_URL=http://eureka-server:8761/eureka
+
+  auth-service:
+    image: tu-auth-service:latest
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
+    environment:
+      - EUREKA_SERVER_URL=http://eureka-server:8761/eureka
+
+  contactanos:
+    image: tu-contactanos:latest
+    build:
+      context: ./contactanos
+      dockerfile: Dockerfile
+    ports:
+      - "8012:8012"
+    environment:
+      - EUREKA_SERVER_URL=http://eureka-server:8761/eureka
+
+  gestionmascotas:
+    image: tu-gestionmascotas:latest
+    build:
+      context: ./gestionmascotas
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      - EUREKA_SERVER_URL=http://eureka-server:8761/eureka
