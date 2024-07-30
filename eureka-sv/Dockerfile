@@ -1,5 +1,5 @@
 # Usa una imagen base de Maven para construir el JAR
-FROM maven:3.8.6-openjdk-17-slim AS build
+FROM maven:3.8.5-openjdk-17-slim AS build
 
 # Establece el directorio de trabajo en el contenedor
 WORKDIR /app
