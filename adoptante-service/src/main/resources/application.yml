@@ -23,6 +23,6 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: https://nocountrydeploy.onrender.com/
+      defaultZone: https://nocountrydeploy.onrender.com/eureka
   instance:
     prefer-ip-address: true
