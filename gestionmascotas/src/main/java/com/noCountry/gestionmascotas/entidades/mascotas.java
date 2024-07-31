@@ -19,7 +19,7 @@ public class mascotas {
     @Enumerated(EnumType.STRING)
     tipoMascota tipoMascota;
     Long peso;
-	@Column(columnDefinition = "LONGTEXT")
+	@Column(columnDefinition = "TEXT")
 	private String img;
     String pelaje;
     String sexo;
