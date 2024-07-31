@@ -26,7 +26,7 @@ WORKDIR /app
 COPY --from=build /app/target/contactanos-0.0.1-SNAPSHOT.jar app_contactanos.jar
 
 # Expone el puerto en el que el servicio estará escuchando
-EXPOSE 8283
+EXPOSE 8012
 
 # Comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "app_contactanos.jar"]
