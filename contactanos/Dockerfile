@@ -25,6 +25,9 @@ WORKDIR /app
 # Copia el archivo JAR construido desde la fase anterior
 COPY --from=build /app/target/contactanos-0.0.1-SNAPSHOT.jar app_contactanos.jar
 
+# Copia los recursos (por ejemplo, email.properties) al contenedor
+COPY --from=build /app/src/main/resources/email.properties /app/email.properties
+
 # Expone el puerto en el que el servicio estará escuchando
 EXPOSE 8012
 
