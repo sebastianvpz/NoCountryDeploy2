@@ -26,7 +26,7 @@ WORKDIR /app
 COPY --from=build /app/target/eureka-sv-0.0.1.jar app_eureka-sv.jar
 
 # Expone el puerto en el que Eureka estará escuchando (por defecto 8761)
-EXPOSE 8761
+EXPOSE 8581
 
 # Comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "app_eureka-sv.jar"]
