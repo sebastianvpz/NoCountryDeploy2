@@ -5,7 +5,7 @@ services:
       context: ./eureka-sv
       dockerfile: Dockerfile
     ports:
-      - "8761:8761"
+      - "8581:8581"
 
   adoptante-service:
     image: tu-adoptante-service:latest
